@@ -7,22 +7,23 @@ require 'code.php';
 
 class NumberWordsTest extends TestCase
 {
+	private $scenarios = array(
+		1 => 'un',
+		2 => 'deux',
+		3 => 'trois',
+		4 => 'quatre',
+		5 => 'cinq',
+		6 => 'six',
+		7 => 'sept',
+		8 => 'huit',
+		9 => 'neuf'
+	);
+
 	public function testNumberLessThanTen()
 	{
-		$expectedResults = array(
-			'un',
-			'deux',
-			'trois',
-			'quatre',
-			'cinq',
-			'six',
-			'sept',
-			'huit',
-			'neuf'
-		);
-
-		$inputNumbers = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
-		$actualResults = array_map('numberToWord', $inputNumbers);
+		$expectedResults = array_values($this->scenarios);
+		$numbers = array_keys($this->scenarios);
+		$actualResults = array_map('numberToWord', $numbers);
 
 		$this->assertEquals($expectedResults, $actualResults);
 	}
