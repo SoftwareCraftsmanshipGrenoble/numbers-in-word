@@ -2,42 +2,27 @@
 
 function numberToWord(int $number)
 {
-	if ($number == 1)
+	switch ($number)
 	{
-		return 'un';
+		case 1:
+			return 'un';
+		case 2:
+			return 'deux';
+		case 3:
+			return 'trois';
+		case 4:
+			return 'quatre';
+		case 5:
+			return 'cinq';
+		case 6:
+			return 'six';
+		case 7:
+			return 'sept';
+		case 8:
+			return 'huit';
+		case 9:
+			return 'neuf';
+		default:
+			return null;
 	}
-	if ($number == 2)
-	{
-		return 'deux';
-	}
-	if ($number == 3)
-	{
-		return 'trois';
-	}
-	if ($number == 4)
-	{
-		return 'quatre';
-	}
-	if ($number == 5)
-	{
-		return 'cinq';
-	}
-	if ($number == 6)
-	{
-		return 'six';
-	}
-	if ($number == 7)
-	{
-		return 'sept';
-	}
-	if ($number == 8)
-	{
-		return 'huit';
-	}
-	if ($number == 9)
-	{
-		return 'neuf';
-	}
-
-	return null;
 }
