@@ -9,17 +9,21 @@ class NumberWordsTest extends TestCase
 {
 	public function testNumberLessThanTen()
 	{
-		$oneWord = numberToWord(1);
-		$this->assertEquals('un', $oneWord);
+		$expectedResults = array(
+			'un',
+			'deux',
+			'trois',
+			'quatre',
+			'cinq',
+			'six',
+			'sept',
+			'huit',
+			'neuf'
+		);
 
-		$this->assertEquals('deux', numberToWord(2));
-		$this->assertEquals('deuxaaaa', numberToWord(2));
-		$this->assertEquals('trois', numberToWord(3));
-		$this->assertEquals('quatre', numberToWord(4));
-		$this->assertEquals('cinq', numberToWord(5));
-		$this->assertEquals('six', numberToWord(6));
-		$this->assertEquals('sept', numberToWord(7));
-		$this->assertEquals('huit', numberToWord(8));
-		$this->assertEquals('neuf', numberToWord(9));
+		$inputNumbers = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
+		$actualResults = array_map('numberToWord', $inputNumbers);
+
+		$this->assertEquals($expectedResults, $actualResults);
 	}
 }
