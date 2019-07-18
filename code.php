@@ -1,8 +1,32 @@
 <?php
-
 function numberToWord(int $number)
 {
-	switch ($number)
+	$unit = $number % 10;
+	$unitWord = unitToWord($unit);
+	$tens = intdiv($number, 10);
+	$tensWord = tensToWord($tens);
+
+	if ($tensWord)
+	{
+		if ($unit === 0)
+		{
+			return $tensWord;
+		}
+		if ($unit === 1)
+		{
+			return $tensWord.' et '.$unitWord;
+		}
+
+		return $tensWord.'-'.$unitWord;
+	}
+
+	return $unitWord;
+}
+
+
+function unitToWord(int $unit)
+{
+	switch ($unit)
 	{
 		case 1:
 			return 'un';
@@ -22,6 +46,19 @@ function numberToWord(int $number)
 			return 'huit';
 		case 9:
 			return 'neuf';
+		default:
+			return null;
+	}
+}
+
+function tensToWord(int $tens)
+{
+	switch ($tens)
+	{
+		case 2:
+			return 'vingt';
+		case 3:
+			return 'trente';
 		default:
 			return null;
 	}

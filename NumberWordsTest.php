@@ -16,7 +16,15 @@ class NumberWordsTest extends TestCase
 		6 => 'six',
 		7 => 'sept',
 		8 => 'huit',
-		9 => 'neuf'
+		9 => 'neuf',
+		// TODO: 10-19
+		20 => 'vingt',
+		21 => 'vingt et un',
+		22 => 'vingt-deux',
+		23 => 'vingt-trois',
+		30 => 'trente',
+		31 => 'trente et un',
+		38 => 'trente-huit',
 	);
 
 	public function testNumberLessThanTen()
